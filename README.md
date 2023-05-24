@@ -26,6 +26,7 @@ function XurxoApp () {
 }
 ```
 
-## Ejercicio
+## Ejercicios
 
 - [] Crea un Componente botón y renderízalo en tu app
+- [] Crear un fichero js con un __objeto literal__ con la información de tu nombre, apellidos y edad. Expórtalo y muestra los resultados en tu __app__
