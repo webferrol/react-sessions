@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React con CDN</title>
+</head>
+<body>
+  <div id="root">
+    
+  </div>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.9/babel.min.js" integrity="sha512-DLVfbu5zhC00YklOBugZZQ8gYpJo6vD10uotv9UJ/e57bvnsy31Q2dkukdsqT0O7lAOZOf/W6/KQxD0R8o0pEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/babel">
+
+    const root = ReactDOM.createRoot(document.querySelector('#root'));
+    
+    
+    // React sin transpilación
+    // const h1 = React.createElement('h1', null, 'Hola mundo');
+    // const button = React.createElement('button', null, 'Click' )
+    // const nodo = React.createElement(React.Fragment,{}, [h1, button])
+    // root.render(nodo)
+    
+    root.render(
+      <> {/* Transpiler */}
+      <h1>Hola mundo</h1>
+      <button>Click</button>
+      </>
+    )
+    </script>
+</body>
+</html>

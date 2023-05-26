@@ -26,7 +26,7 @@ function Saludar () {
 }
 ```
 
-## Function Component
+## Functional Component
 
 En __react__ los __componentes__ son __funciones__ que retornan un __elemento react__ y no un __elemento del DOM__
 
