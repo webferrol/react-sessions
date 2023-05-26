@@ -2,6 +2,38 @@
 
 [Invitación a Classroom](https://classroom.google.com/c/NTg0NTY4MTAxMTg4?cjc=eyufnhy)
 
+## JavaScript imprescindible
+
+### Destructuring
+
+```js
+const YO = { 
+  nombre: 'Xurxo',
+  apellido1: 'González',
+  apellido2: 'Tenreiro'
+}
+
+// Desetructuración de un "Objeto Literal"
+const { nombre, apellido1, apellido2 = 'Desconocido' } = YO
+
+```
+
+La __desestructuración__ la utilizamos siempre aunque a veces no nos demos cuenta. Por ejemplo cuando desestructuramos las __props__ de un componente:
+
+```js
+function MiApp ({ value }) {
+  return (<div>{value}</div>)
+}
+```
+
+También podemos _desestructurar_ un __array__:
+
+```js
+const numeros = [1, 2, 3]
+
+const [num1, num2, num3] = numeros
+```
+
 ## Librerías de React
 
 Para trabajar con __reactjs__ son imprecindibles dos __dependencias__
