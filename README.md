@@ -59,10 +59,12 @@ function Saludar () {
   - Mirar qué tipo de importanción realizar Apps
 - Renombrar App por CounterApp
 - Borra todo el contenido de la aplicación
-- Crear dentro un botón que ponga incrementar y una variable donde se muestre el valor de incial de un contador por defecto cero
-- Aplicar un poco de CSS al componente
+- Ejercicio 3
 
 ## Ejercicios
 
 - [x] Crea un Componente botón y renderízalo en tu app
 - [x] Crear un fichero js con un __objeto literal__ con la información de tu nombre, apellidos y edad. Expórtalo y muestra los resultados en tu __app__
+- [] Intenta recrear al siguiente captura de pantalla
+
+![Counter](./assets/counter.png)
