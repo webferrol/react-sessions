@@ -1,0 +1,76 @@
+{
+  "Search": [
+      {
+          "Title": "Merlin",
+          "Year": "2008–2012",
+          "imdbID": "tt1199099",
+          "Type": "series",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BZTBjYjM3ZjItZTI1MS00ODZhLWFhZDgtODgxMmMzN2JlOTExXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg"
+      },
+      {
+          "Title": "Merlin",
+          "Year": "1998",
+          "imdbID": "tt0130414",
+          "Type": "series",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BMTYzNDExNjk2NF5BMl5BanBnXkFtZTcwMTQ3NjYxMQ@@._V1_SX300.jpg"
+      },
+      {
+          "Title": "Arthur & Merlin: Knights of Camelot",
+          "Year": "2020",
+          "imdbID": "tt7052270",
+          "Type": "movie",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BNzQ5MDY2YWItOWYzMi00NGFhLWFlNDAtNmNiNjg2NWM1NjcyXkEyXkFqcGdeQXVyNjU2NDIxOTM@._V1_SX300.jpg"
+      },
+      {
+          "Title": "Arthur & Merlin",
+          "Year": "2015",
+          "imdbID": "tt4065340",
+          "Type": "movie",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BNDVkYjQ3ZmMtNTRhZS00YTFiLTg5MzYtMmEzYTRlNjQzZmYyXkEyXkFqcGdeQXVyMjI2NTc0NTM@._V1_SX300.jpg"
+      },
+      {
+          "Title": "Merlin and the War of the Dragons",
+          "Year": "2008",
+          "imdbID": "tt1294699",
+          "Type": "movie",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BMjAwMDc2NzI4M15BMl5BanBnXkFtZTcwODg3MTEwMg@@._V1_SX300.jpg"
+      },
+      {
+          "Title": "Merlin and the Book of Beasts",
+          "Year": "2009",
+          "imdbID": "tt1320346",
+          "Type": "movie",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BMTQxMzUyMzA4MV5BMl5BanBnXkFtZTcwMTYxNjg4Mg@@._V1_SX300.jpg"
+      },
+      {
+          "Title": "The Misadventures of Merlin Jones",
+          "Year": "1964",
+          "imdbID": "tt0058355",
+          "Type": "movie",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BNTVhN2E2YWEtMWQyOC00N2EwLTg1Y2QtNzNkZGQ1YWE3NDAwXkEyXkFqcGdeQXVyMTQ3Njg3MQ@@._V1_SX300.jpg"
+      },
+      {
+          "Title": "Merlin: Secrets & Magic",
+          "Year": "2009–",
+          "imdbID": "tt1516278",
+          "Type": "series",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BNDdhZDA0NjItYWE0ZS00MWYyLWFkNWEtZTMzNDRlOTYxYWRlXkEyXkFqcGdeQXVyNDUxOTg3MTE@._V1_SX300.jpg"
+      },
+      {
+          "Title": "Merlin: The Return",
+          "Year": "2000",
+          "imdbID": "tt0193318",
+          "Type": "movie",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BNjZjNDA3NmQtOWI1Ni00ZjM2LTgzODktZjUxMTNkOWI3OWMwL2ltYWdlXkEyXkFqcGdeQXVyNDUxNjc5NjY@._V1_SX300.jpg"
+      },
+      {
+          "Title": "Merlin",
+          "Year": "1998",
+          "imdbID": "tt0139460",
+          "Type": "movie",
+          "Poster": "https://m.media-amazon.com/images/M/MV5BNDg2NDEyNDkyMF5BMl5BanBnXkFtZTgwMDgxMDYxNDE@._V1_SX300.jpg"
+      }
+  ],
+  "totalResults": "52",
+  "Response": "True"
+}
