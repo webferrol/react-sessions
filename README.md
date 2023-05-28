@@ -125,10 +125,10 @@ function Saludar () {
 - Crear otro proyecto vite
 - Mirar la plantilla que carga por defeto Vite (Antes de borrar contenido)
   - Errors eslint en ruta App.jsx
-  - Mirar qué tipo de importanción realizar Apps
+  - Mirar qué tipo de importanción realizar el componente App (nombrada o por defecto)
+- Borra el contenido de App
 - Renombrar App por CounterApp
-- Borra todo el contenido de la aplicación
-- Ejercicio 3
+- Ejercicios 3
 
 ## Ejercicios
 
