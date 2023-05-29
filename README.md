@@ -50,7 +50,7 @@ var doubles = numbers.map(function (x) {
 // numbers is still [1, 5, 10, 15]
 ```
 
-Para __renderizar listas__ a través de una expresiones son perfectos. Ejemplo de [react.dev](https://es.react.dev/learn#rendering-lists):
+Para __renderizar listas__ a través de expresiones son perfectas. Ejemplo de [react.dev](https://es.react.dev/learn#rendering-lists):
 
 ```js
 const products = [
@@ -102,12 +102,12 @@ function XurxoApp () {
 }
 ```
 
-## Impresión de variables
+## Impresión de expresiones (variables, constantes, literales, objetos, retorno de funciones ....)
 
 Un __componente react__ siempre retorna una __etiqueta de marcado__. Pero estas marcas no son __JavaScript__
 
 ```js
-  return (<h1>Hola<h1>)
+  return (<h1>Hola</h1>)
 ```
 
 Si deseamos escribir JavaScript puro entre estas marcas o sea utilizar __expresiones__, en __React__ se deben utilizar las llaves de apertura y cierre: __{expresión}__. Mira el siguiente __Functional Component__:
@@ -120,15 +120,66 @@ function Saludar () {
   )
 }
 ```
+## Responder eventos
 
-# Sesión 2
-- Crear otro proyecto vite
-- Mirar la plantilla que carga por defeto Vite (Antes de borrar contenido)
-  - Errors eslint en ruta App.jsx
-  - Mirar qué tipo de importanción realizar el componente App (nombrada o por defecto)
-- Borra el contenido de App
-- Renombrar App por CounterApp
-- Ejercicios 3
+```js
+function MyButton() {
+  function handleClick() {
+    alert('You clicked me!');
+  }
+
+  // ¡Nota que onClick={handleClick} no tiene paréntesis al final! No llames a la función manejadora de eventos
+  return (
+    <button onClick={handleClick}>
+      Click me
+    </button>
+  );
+}
+```
+
+## Hooks
+__
+Los __hooks__ son una _API de React_ que nos permite __tener estado__, y otras características de React, en los componentes creados con una function.
+
+Hooks es gancho y, precisamente, lo que hacen, es que te _permiten enganchar tus componentes funcionales a todas las características que ofrece React_.
+
+### useStates
+
+A menudo, querrás que tu __componente__ _recuerde_ alguna información y la muestre. 
+
+El _hook_ __useState__ es utilizado para __crear variables de estado__, quiere decir que su valor es __dinámico__, que este _puede cambiar_ en el tiempo y eso requiere una re-renderización del componente donde se utiliza.
+
+```js
+const [count, setCount] = useState(0);
+```
+En el ejemplo de arriba el _hook_ __useState__:
+
+1. Recibe un parámetro:
+  - El valor inicial de nuestra variable de estado.
+2. Devuelve un _array_ con dos variables:
+  - En primer lugar tenemos la variable que contiene el valor.
+  - La siguiente variable es una __función set__, requiere el nuevo valor del estado, y este modifica el valor de la variable que anteriormente mencionamos.
+
+```js
+import { useState } from 'react';
+
+function MyButton() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+```
+
+# Sesión 3
+-  Comunicación de hijos a padres
 
 ## Ejercicios
 
