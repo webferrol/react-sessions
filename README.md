@@ -213,3 +213,9 @@ function MyButton() {
   - Tiene que ser dinámico. Hay un estado que nos indicar "Seguir" o "Siguiendo"
   - Para los avatares de la imagenes tenemos la https://unavatar.io. Si queremos cargar una imagen sólo hay que poner un nombre de sesión por ejemplo [https://unavatar.io/webferrol](https://unavatar.io/webferrol)
 ![twitter](./assets/twitter.gif)
+  - Ejemplo de formato de botón con tailwind:
+  ```html
+   <button
+      className='focus:outline-none py-1 px-4 rounded-full shadow-sm text-center text-black-600 bg-white hover:bg-blue-100 font-medium border border-black-200'
+    > Seguir </button>
+  ```
