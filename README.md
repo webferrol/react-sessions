@@ -6,7 +6,7 @@
 
 ### Destructuring
 
-```js
+```jsx
 const YO = { 
   nombre: 'Xurxo',
   apellido1: 'González',
@@ -20,7 +20,7 @@ const { nombre, apellido1, apellido2 = 'Desconocido' } = YO
 
 La __desestructuración__ la utilizamos siempre aunque a veces no nos demos cuenta. Por ejemplo cuando desestructuramos las __props__ de un componente:
 
-```js
+```jsx
 function MiApp ({ value }) {
   return (<div>{value}</div>)
 }
@@ -28,7 +28,7 @@ function MiApp ({ value }) {
 
 También podemos _desestructurar_ un __array__:
 
-```js
+```jsx
 const numeros = [1, 2, 3]
 
 const [num1, num2, num3] = numeros
@@ -41,7 +41,7 @@ const [num1, num2, num3] = numeros
 
 __IMPORTANTE__: Los resultados de cada __iteración__ se deben __retornar__.
 
-```js
+```jsx
 var numbers = [1, 5, 10, 15]
 var doubles = numbers.map(function (x) {
    return x * 2; // AQUÍ EL RETORNO
@@ -52,7 +52,7 @@ var doubles = numbers.map(function (x) {
 
 Para __renderizar listas__ a través de expresiones son perfectas. Ejemplo de [react.dev](https://es.react.dev/learn#rendering-lists):
 
-```js
+```jsx
 const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },
@@ -92,7 +92,7 @@ No es más que una  __librería nativa de JavaScript__ que nos facilita el traba
 
 En __react__ los __componentes__ son __funciones__ que retornan un __elemento react__ y no un __elemento del DOM__
 
-```js
+```jsx
 /*
  * Function Component
  * @return {React.Element} ¡No retorna un DOM.Element'
@@ -106,13 +106,13 @@ function XurxoApp () {
 
 Un __componente react__ siempre retorna una __etiqueta de marcado__. Pero estas marcas no son __JavaScript__
 
-```js
+```jsx
   return (<h1>Hola</h1>)
 ```
 
 Si deseamos escribir JavaScript puro entre estas marcas o sea utilizar __expresiones__, en __React__ se deben utilizar las llaves de apertura y cierre: __{expresión}__. Mira el siguiente __Functional Component__:
 
-```js
+```jsx
 function Saludar () {
   const nombre = 'Xurxo'
   return (
@@ -120,9 +120,31 @@ function Saludar () {
   )
 }
 ```
+
+## Props
+
+Las __props__ _son las _propiedades_ de un __componente__. Son datos que se pasan de un componente padre a un componente hijo. Por ejemplo, si tienes un componente Button que muestra un botón, puedes pasarle una __prop__ text para que el botón muestre ese texto:
+
+```jsx
+function Button(props) {
+  return <button>{props.text}</button>
+}
+```
+
+Debe considerarse además que al usar cualquier expresión _JavaScript_ dentro de _JSX_ debe envolverlos con _{}_, en este caso el objeto __props__, de otra forma _JSX_ lo considerará como texto plano. En el ejemplo anterior podemos lanzar el __componente__:
+
+```jsx
+<>
+  {/* Pasamos un valor de tipo string */}
+  <Button text='1' />
+  {/* Pasamos un valor de tipo number */}
+  <Button text={1} />
+</>
+```
+
 ## Responder eventos
 
-```js
+```jsx
 function MyButton() {
   function handleClick() {
     alert('You clicked me!');
@@ -160,7 +182,7 @@ En el ejemplo de arriba el _hook_ __useState__:
   - En primer lugar tenemos la variable que contiene el valor.
   - La siguiente variable es una __función set__, requiere el nuevo valor del estado, y este modifica el valor de la variable que anteriormente mencionamos.
 
-```js
+```jsx
 import { useState } from 'react';
 
 function MyButton() {
@@ -179,12 +201,15 @@ function MyButton() {
 ```
 
 # Sesión 3
--  Comunicación de hijos a padres
+-  [Compartir datos entre componentes](https://es.react.dev/learn#sharing-data-between-components)
 
 ## Ejercicios
 
 1. [x] Crea un Componente botón y renderízalo en tu app
 2. [x] Crear un fichero js con un __objeto literal__ con la información de tu nombre, apellidos y edad. Expórtalo y muestra los resultados en tu __app__
 3. [] Intenta recrear la siguiente captura de pantalla
-
 ![Counter](./assets/counter.png)
+4. [] Intenta reproducir la siguiente captura de pantalla
+  - Tiene que ser dinámico. Hay un estado que nos indicar "Seguir" o "Siguiendo"
+  - Para los avatares de la imagenes tenemos la https://unavatar.io. Si queremos cargar una imagen sólo hay que poner un nombre de sesión por ejemplo [https://unavatar.io/webferrol](https://unavatar.io/webferrol)
+![twitter](./assets/twitter.gif)
