@@ -4,6 +4,32 @@
 
 ## JavaScript imprescindible
 
+### import / export
+
+1. Exportación: primitivos, no primitivos, funciones
+
+```js
+export let variable_name
+export function function_name() {
+  // Statements
+}
+export const USUARIO = { name: 'Xurxo', edad: 50 }
+```
+
+2. Exportación por defecto
+
+```js
+export default function app () {
+    // Statements
+}
+```
+
+3. Importaciones (nombradas y por defecto)
+
+```js
+import miApp, { variable_name, USUARIO, function_name } from 'path_to_file'
+```
+
 ### Destructuring
 
 ```jsx
@@ -70,6 +96,7 @@ function ProductsApp () {
     <ul>{listItems}</ul>
   )
 }
+```
 
 ## Librerías de React
 
@@ -123,7 +150,7 @@ function Saludar () {
 
 ## Props
 
-Las __props__ _son las _propiedades_ de un __componente__. Son datos que se pasan de un componente padre a un componente hijo. Por ejemplo, si tienes un componente Button que muestra un botón, puedes pasarle una __prop__ text para que el botón muestre ese texto:
+Las __props__ son las _propiedades_ de un __componente__. Son datos que se pasan de un componente padre a un componente hijo. Por ejemplo, si tienes un componente Button que muestra un botón, puedes pasarle una __prop__ text para que el botón muestre ese texto:
 
 ```jsx
 function Button(props) {
@@ -160,10 +187,10 @@ function MyButton() {
 ```
 
 ## Hooks
-__
+
 Los __hooks__ son una _API de React_ que nos permite __tener estado__, y otras características de React, en los componentes creados con una function.
 
-Hooks es gancho y, precisamente, lo que hacen, es que te _permiten enganchar tus componentes funcionales a todas las características que ofrece React_.
+Un __hook__ es gancho y, precisamente, lo que hace, es que te _permiten enganchar tus componentes funcionales a todas las características que ofrece React_.
 
 ### useStates
 
@@ -199,15 +226,11 @@ function MyButton() {
   );
 }
 ```
-
-# Sesión 3
--  [Compartir datos entre componentes](https://es.react.dev/learn#sharing-data-between-components)
-
 ## Ejercicios
 
 1. [x] Crea un Componente botón y renderízalo en tu app
 2. [x] Crear un fichero js con un __objeto literal__ con la información de tu nombre, apellidos y edad. Expórtalo y muestra los resultados en tu __app__
-3. [] Intenta recrear la siguiente captura de pantalla
+3. [x] Intenta recrear la siguiente captura de pantalla [Solución](https://github.com/webferrol/react-counter-project.git)
 ![Counter](./assets/counter.png)
 4. [] Intenta reproducir la siguiente captura de pantalla
   - Tiene que ser dinámico. Hay un estado que nos indicar "Seguir" o "Siguiendo"
@@ -219,3 +242,11 @@ function MyButton() {
       className='focus:outline-none py-1 px-4 rounded-full shadow-sm text-center text-black-600 bg-white hover:bg-blue-100 font-medium border border-black-200'
     > Seguir </button>
   ```
+
+  # Sesión 4
+
+  1. Crear un proyecto llamado Giphy.com (CSS y HTML libres)
+  2. Crear un componente que permita mostrar informacion de una [película](./mocks/movie.json)
+  3. Crear otro componente que permita crear una lista de [películas](./mocks/movies.json)
+    - Como campos utilizar como mínimo un id, un título y visualización de una imagen
+  4. Crear un formulario que permita añadir una película a la lista películas
