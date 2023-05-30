@@ -232,21 +232,16 @@ function MyButton() {
 2. [x] Crear un fichero js con un __objeto literal__ con la información de tu nombre, apellidos y edad. Expórtalo y muestra los resultados en tu __app__
 3. [x] Intenta recrear la siguiente captura de pantalla [Solución](https://github.com/webferrol/react-counter-project.git)
 ![Counter](./assets/counter.png)
-4. [] Intenta reproducir la siguiente captura de pantalla
-  - Tiene que ser dinámico. Hay un estado que nos indicar "Seguir" o "Siguiendo"
-  - Para los avatares de la imagenes tenemos la https://unavatar.io. Si queremos cargar una imagen sólo hay que poner un nombre de sesión por ejemplo [https://unavatar.io/webferrol](https://unavatar.io/webferrol)
-![twitter](./assets/twitter.gif)
-  - Ejemplo de formato de botón con tailwind:
-  ```html
-   <button
-      className='focus:outline-none py-1 px-4 rounded-full shadow-sm text-center text-black-600 bg-white hover:bg-blue-100 font-medium border border-black-200'
-    > Seguir </button>
-  ```
+
+
 
   # Sesión 4
 
   1. Crear un proyecto llamado Giphy.com (CSS y HTML libres)
-  2. Crear un componente que permita mostrar informacion de una [película](./mocks/movie.json)
-  3. Crear otro componente que permita crear una lista de [películas](./mocks/movies.json)
-    - Como campos utilizar como mínimo un id, un título y visualización de una imagen
-  4. Crear un formulario que permita añadir una película a la lista películas
+  2. Crear un componente/s que liste los personajes de Star Wars. [Personajes](./mocks/luke-skywalker.json)
+  3. Crear un formulario que permita añadir un personaje a la lista
+  4. Crear un componente que permita mostrar un lista de película. Resursos:
+    - [Películas](./mocks/search.json)
+    - [Película no encontrada](./mocks/search-not-found.json)
+    - [Error de Api Key](./mocks/error-401.json)
+  5. Crear un formulario que permita añadir categorías a la lista
