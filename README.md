@@ -235,7 +235,7 @@ function MyButton() {
 
 
 
-  # Sesión 4
+  # Sesión 5
 
   1. Crear un proyecto llamado Giphy.com (CSS y HTML libres)
   2. Crear un componente/s que liste los personajes de Star Wars. [Personajes](./mocks/luke-skywalker.json)
@@ -245,3 +245,4 @@ function MyButton() {
     - [Película no encontrada](./mocks/search-not-found.json)
     - [Error de Api Key](./mocks/error-401.json)
   5. Crear un formulario que permita añadir categorías a la lista
+    - [input[type=search]](https://elcssar.com/html5/input-type-search)
