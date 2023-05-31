@@ -129,6 +129,21 @@ function XurxoApp () {
 }
 ```
 
+## Búsqueda en arrays
+
+Sólo algunos ejemplos:
+
+- [Array.prototype.indexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+- [Array.prototype.includes()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+- [Array.prototype.some()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+
+## Fetch
+
+Para obtener datos de un servidor donde el __end point__ es una __API Rest__
+
+- [fetch](https://developer.mozilla.org/es/docs/Web/API/fetch)
+
+
 ## Impresión de expresiones (variables, constantes, literales, objetos, retorno de funciones ....)
 
 Un __componente react__ siempre retorna una __etiqueta de marcado__. Pero estas marcas no son __JavaScript__
