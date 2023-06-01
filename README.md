@@ -59,6 +59,19 @@ const numeros = [1, 2, 3]
 
 const [num1, num2, num3] = numeros
 ```
+### Búsqueda en arrays
+
+Sólo algunos ejemplos:
+
+- [Array.prototype.indexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+- [Array.prototype.includes()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+- [Array.prototype.some()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+  
+### Fetch
+
+Para obtener datos de un servidor donde el __end point__ es una __API Rest__
+
+- [fetch](https://developer.mozilla.org/es/docs/Web/API/fetch)
 
 ### Array.prototype.map
 
@@ -92,11 +105,18 @@ function ProductsApp () {
     </li>
   )
 
-  return (
     <ul>{listItems}</ul>
+  return (
   )
 }
 ```
+
+
+## React. ¿Qué es?
+
+Como indica su [página oficial](https://es.react.dev/) se trata de una __biblioteca__ o __librería__ para la creación de __interfaces__ des usuario _web_ y _nativas_.
+
+No es más que una  __librería nativa de JavaScript__ que nos facilita el trabajo a la hora de __renderizar__ código, trabajar con __estados__ y mucho más.
 
 ## Librerías de React
 
@@ -108,12 +128,6 @@ import ReactDOM from 'react-dom/client'
 ```
 
 Estas serán colocadas en el __entry point__ de nuestro proyecto. Por ejemplo en __vitejs__ sería __main.jsx__
-
-## React. ¿Qué es?
-
-Como indica su [página oficial](https://es.react.dev/) se trata de una __biblioteca__ o __librería__ para la creación de __interfaces__ des usuario _web_ y _nativas_.
-
-No es más que una  __librería nativa de JavaScript__ que nos facilita el trabajo a la hora de __renderizar__ código, trabajar con __estados__ y mucho más.
 
 ## Functional Component
 
@@ -128,21 +142,6 @@ function XurxoApp () {
   return (<>Soy Xurxo</>)
 }
 ```
-
-## Búsqueda en arrays
-
-Sólo algunos ejemplos:
-
-- [Array.prototype.indexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
-- [Array.prototype.includes()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
-- [Array.prototype.some()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-
-## Fetch
-
-Para obtener datos de un servidor donde el __end point__ es una __API Rest__
-
-- [fetch](https://developer.mozilla.org/es/docs/Web/API/fetch)
-
 
 ## Impresión de expresiones (variables, constantes, literales, objetos, retorno de funciones ....)
 
