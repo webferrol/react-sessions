@@ -249,12 +249,20 @@ function MyButton() {
 
 
 
-  # Sesión 5
+  # Sesión 6
 
-  1. Crear un formulario que permita añadir un personaje a la lista
-  2. Crear un componente que permita mostrar un lista de película. Resursos:
-    - [Películas](./mocks/search.json)
-    - [Película no encontrada](./mocks/search-not-found.json)
-    - [Error de Api Key](./mocks/error-401.json)
-  3. Crear un formulario que permita añadir categorías a la lista
-    - [input[type=search]](https://elcssar.com/html5/input-type-search)
+  1. Crear un proyecto llamado hooks-project
+  2. Crear un componente llamado Counter (trabajaremos con el __hook__ useState)
+    - Tendrá una variable de estado llamado counter
+    - Incrementará el valor en uno
+
+  # Sesión Profe
+  2. Cambiar el valor iniciar de counter a 
+
+  ```jsx
+  const [counter, setCounter] = useState({
+    counter: 10,
+    counter: 20,
+    counter: 30
+  })
+  ```
