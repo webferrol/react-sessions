@@ -246,6 +246,8 @@ function MyButton() {
 2. [x] Crear un fichero js con un __objeto literal__ con la información de tu nombre, apellidos y edad. Expórtalo y muestra los resultados en tu __app__
 3. [x] Intenta recrear la siguiente captura de pantalla [Solución](https://github.com/webferrol/react-counter-project.git)
 ![Counter](./assets/counter.png)
+4. [] Reproducir la siguiente captura de pantalla
+![Simple Form](./assets/formulario.jpg)
 
 
 
