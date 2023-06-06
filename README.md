@@ -246,25 +246,16 @@ function MyButton() {
 2. [x] Crear un fichero js con un __objeto literal__ con la información de tu nombre, apellidos y edad. Expórtalo y muestra los resultados en tu __app__
 3. [x] Intenta recrear la siguiente captura de pantalla [Solución](https://github.com/webferrol/react-counter-project.git)
 ![Counter](./assets/counter.png)
-4. [] Reproducir la siguiente captura de pantalla
+4. [x] Reproducir la siguiente captura de pantalla [Solución](https://github.com/webferrol/react-simple-form.git)
 ![Simple Form](./assets/formulario.jpg)
+5. [] Reproducir la siguiente captura de pantalla
+![Star Wars Api](./assets/star-wars-api.png)
 
 
 
-  # Sesión 6
+  # Sesión 7
 
-  1. Crear un proyecto llamado hooks-project
-  2. Crear un componente llamado Counter (trabajaremos con el __hook__ useState)
-    - Tendrá una variable de estado llamado counter
-    - Incrementará el valor en uno
-
-  # Sesión Profe
-  2. Cambiar el valor iniciar de counter a 
-
-  ```jsx
-  const [counter, setCounter] = useState({
-    counter: 10,
-    counter: 20,
-    counter: 30
-  })
-  ```
+  1. Star Wars Api
+   - Crear componentes:
+    - Formulario
+    - Listado de personajes (Estos podrán eliminarse de la lista)
