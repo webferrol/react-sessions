@@ -73,6 +73,30 @@ Para obtener datos de un servidor donde el __end point__ es una __API Rest__
 
 - [fetch](https://developer.mozilla.org/es/docs/Web/API/fetch)
 
+__fetch__ es un __método__ del objeto global (en caso del navegador sería __window__) que lanza una petición de un recurso de red. Lo que devuelve es una promesa.
+
+```js
+Promise<Response> fetch(input[, init]);
+```
+
+En el ejemplo que veremos a continuación el __input__ será un __string__ que representa la localización del recurso de red que deseamos obtener. En este caso un fichero plano __json__ que posteriormente lo convertiremos en un __objeto javascript__ con el método __json()__
+
+```js
+fetch('https://swapi.dev/api/people/1')
+  .then(response => response.json())
+  .then(data => console.log(data))
+```
+
+Existe también otra alternativa de lanzar fetch a través de una función asíncrona
+
+```js
+async function getPeople () {
+  const response = await fetch('https://swapi.dev/api/people/1')
+  const data = await response.json()
+  console.log(data)
+}
+```
+
 ### Array.prototype.map
 
 > El método map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
