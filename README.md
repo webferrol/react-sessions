@@ -279,7 +279,6 @@ function MyButton() {
 
   # Sesión 7
 
-  1. Star Wars Api
-   - Crear componentes:
-    - Formulario
-    - Listado de personajes (Estos podrán eliminarse de la lista)
+- Star Wars Api
+  1. Crear componentes:- Formulario
+  2. Listado de personajes (Estos podrán eliminarse de la lista)
