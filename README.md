@@ -264,6 +264,34 @@ function MyButton() {
   );
 }
 ```
+### useRef
+
+__useRef__ es un Hook de React que te permite referenciar un valor que no es necesario para el renderizado.
+
+
+```jsx
+import { useRef } from 'react'
+
+function EjemploRef ({ initialValue }) {
+  const myRef = useRef(initialValue)
+
+  return (
+    <input
+      ref={myRef} 
+      type='text'
+    />
+  )
+}
+```
+#### Solución a problemas
+[No puedo obtener una ref a un componente personalizado](https://es.react.dev/reference/react/useRef#i-cant-get-a-ref-to-a-custom-component)
+[Ejemplo implementado](./components/CustomInput.jsx)
+
+### useId
+
+__useId__ es un Hook de React para generar IDs únicos que se pueden pasar a los atributos de accesibilidad.
+[Ejemplo implementado](./components/CustomInput.jsx)
+
 ## Ejercicios
 
 1. [x] Crea un Componente botón y renderízalo en tu app

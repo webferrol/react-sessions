@@ -1,6 +1,11 @@
 import { useId, forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
+
+/**
+ * forwardRef le permite a tu componente exponer un nodo DOM al componente padre con una ref.
+ * Referencia: https://es.react.dev/reference/react/forwardRef
+ */
 const CustomInput = forwardRef(({ textLabel, ...props }, ref) => {
   const id = useId()
   return (
