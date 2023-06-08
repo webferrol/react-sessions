@@ -305,8 +305,8 @@ __useId__ es un Hook de React para generar IDs únicos que se pueden pasar a los
 
 
 
-  # Sesión 7
+  # Sesión 8
 
 - Star Wars Api
-  1. Crear componentes:- Formulario
-  2. Listado de personajes (Estos podrán eliminarse de la lista)
+- Probar componente CustomInput
+- Crear fetch de datos [Dog API](https://dog.ceo/dog-api/)
