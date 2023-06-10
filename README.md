@@ -284,13 +284,34 @@ function EjemploRef ({ initialValue }) {
 }
 ```
 #### Solución a problemas
-[No puedo obtener una ref a un componente personalizado](https://es.react.dev/reference/react/useRef#i-cant-get-a-ref-to-a-custom-component)
-[Ejemplo implementado](./components/CustomInput.jsx)
+
+- [No puedo obtener una ref a un componente personalizado](https://es.react.dev/reference/react/useRef#i-cant-get-a-ref-to-a-custom-component)
+- [Ejemplo implementado](./components/CustomInput.jsx)
 
 ### useId
 
 __useId__ es un Hook de React para generar IDs únicos que se pueden pasar a los atributos de accesibilidad.
 [Ejemplo implementado](./components/CustomInput.jsx)
+
+## Memo
+
+__memo__ te permite saltarte el rerenderizado de un componente cuando sus props no han cambiado.
+Esto obviamente sólo será necesario si notamos una merma de rendimiento en uno de nuestros componenentes por realizar por ejemplo procesos pesados.
+
+Elemplo de aplicación:
+
+```jsx
+const MovieItem = memo(({ title }) => {
+  console.log('MoviItem :)')
+  return (
+    <div>{title} - {Math.floor(Date.now() / 1000)} seg</div>
+  )
+})
+```
+- [Ejemplo completo del extracto del código de arriba](./components/Memo.jsx)
+- Para ver ejemplos de uso ir a la documentación de react para la utilización del [método memo](https://es.react.dev/reference/react/memo).
+
+
 
 ## Ejercicios
 
