@@ -336,4 +336,4 @@ const MovieItem = memo(({ title }) => {
 
 - Github Avatar
 - Realizar el todos del examen
-  - Utiliar esta referencia [https://tailwindui.com/components](https://tailwindui.com/components)
+  - [List](https://tailwindcomponents.com/component/todo-app-ui)
