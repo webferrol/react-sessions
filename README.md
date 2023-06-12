@@ -316,18 +316,23 @@ const MovieItem = memo(({ title }) => {
 ## Ejercicios
 
 1. [x] Crea un Componente botón y renderízalo en tu app
+
 2. [x] Crear un fichero js con un __objeto literal__ con la información de tu nombre, apellidos y edad. Expórtalo y muestra los resultados en tu __app__
-3. [x] Intenta recrear la siguiente captura de pantalla [Solución](https://github.com/webferrol/react-counter-project.git)
-![Counter](./assets/counter.png)
-4. [x] Reproducir la siguiente captura de pantalla [Solución](https://github.com/webferrol/react-simple-form.git)
-![Simple Form](./assets/formulario.jpg)
-5. [] Reproducir la siguiente captura de pantalla
-![Star Wars Api](./assets/star-wars-api.png)
-6. [Github Avatar](./assets/github.jpg)
+
+3. [x] <img src='./assets/counter.png' width='600' alt='CounterApp'>
+  - [Una solución](https://github.com/webferrol/react-counter-project.git)
+
+4. [x] <img src='./assets/formulario.jpg' width='600' alt='Simple Form'>
+  - [Una solución](https://github.com/webferrol/react-simple-form.git)
+
+5. [] <img src='./assets/star-wars-api.png' width='600' alt='Star Wars API'>
+
+6. [] <img src='./assets/github.jpg' width='600' alt='Github avatar'>
 
 
 
-  # Sesión 9
+  # Sesión 10
 
 - Crear fetch de datos [Dog API](https://dog.ceo/dog-api/)
 - Github Avatar
+- Realizar el todos del exament
