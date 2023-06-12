@@ -323,11 +323,11 @@ const MovieItem = memo(({ title }) => {
 ![Simple Form](./assets/formulario.jpg)
 5. [] Reproducir la siguiente captura de pantalla
 ![Star Wars Api](./assets/star-wars-api.png)
+6. [Github Avatar](./assets/github.jpg)
 
 
 
-  # Sesión 8
+  # Sesión 9
 
-- Star Wars Api
-- Probar componente CustomInput
 - Crear fetch de datos [Dog API](https://dog.ceo/dog-api/)
+- Github Avatar
