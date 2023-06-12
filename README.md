@@ -325,7 +325,8 @@ const MovieItem = memo(({ title }) => {
 4. [x] <img src='./assets/formulario.jpg' width='600' alt='Simple Form'>
   - [Una solución](https://github.com/webferrol/react-simple-form.git)
 
-5. [] <img src='./assets/star-wars-api.png' width='600' alt='Star Wars API'>
+5. [x] <img src='./assets/star-wars-api.png' width='600' alt='Star Wars API'>
+  - [Una solución](https://github.com/webferrol/react-swapi)
 
 6. [] <img src='./assets/github.jpg' width='600' alt='Github avatar'>
 
@@ -333,6 +334,5 @@ const MovieItem = memo(({ title }) => {
 
   # Sesión 10
 
-- Crear fetch de datos [Dog API](https://dog.ceo/dog-api/)
 - Github Avatar
-- Realizar el todos del exament
+- Realizar el todos del examen
