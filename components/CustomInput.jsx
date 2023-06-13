@@ -5,17 +5,17 @@ import PropTypes from 'prop-types'
  * forwardRef le permite a tu componente exponer un nodo DOM al componente padre con una ref.
  * Referencia: https://es.react.dev/reference/react/forwardRef
  */
-const CustomInput = forwardRef(({ textLabel, ...props }, ref) => {
+const CustomInput = forwardRef(({ children, ...props }, ref) => {
   const id = useId()
   return (
     <>
       {
-        textLabel &&
+        children &&
           (
             <label
               className='block mb-2 font-bold text-gray-700'
               htmlFor={id}
-            >{textLabel}
+            >{children}
             </label>
           )
       }
@@ -30,7 +30,7 @@ const CustomInput = forwardRef(({ textLabel, ...props }, ref) => {
 })
 
 CustomInput.propTypes = {
-  textLabel: PropTypes.string
+  children: PropTypes.any
 }
 
 // Para evitar el mensaje de depuración de eslint de react/display-name

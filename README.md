@@ -335,5 +335,8 @@ const MovieItem = memo(({ title }) => {
   # Sesión 10
 
 - Github Avatar
+
+- Realizar un fetching de data a partir del siguiente __end point__: [http://www.omdbapi.com/?i=tt3896198&apikey=ce841c1c&s=merlin&page=1](http://www.omdbapi.com/?i=tt3896198&apikey=ce841c1c&s=merlin&page=1)
+
 - Realizar el todos del examen
-  - [List](https://tailwindcomponents.com/component/todo-app-ui)
+  - [Template a utilizar](https://tailwindcomponents.com/component/todo-app-ui)
