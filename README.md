@@ -328,15 +328,12 @@ const MovieItem = memo(({ title }) => {
 5. [x] <img src='./assets/star-wars-api.png' width='600' alt='Star Wars API'>
   - [Una solución](https://github.com/webferrol/react-swapi)
 
-6. [] <img src='./assets/github.jpg' width='600' alt='Github avatar'>
+6. [x] Github Avatar y Todo List
+  - [Una solución](https://github.com/webferrol/react-github_avatar-todolist)
 
 
 
-  # Sesión 10
+  # Sesión 12
 
-- Github Avatar
-
-- Realizar un fetching de data a partir del siguiente __end point__: [http://www.omdbapi.com/?i=tt3896198&apikey=ce841c1c&s=merlin&page=1](http://www.omdbapi.com/?i=tt3896198&apikey=ce841c1c&s=merlin&page=1)
-
-- Realizar el todos del examen
-  - [Template a utilizar](https://tailwindcomponents.com/component/todo-app-ui)
+  - Firebase
+  - React Router Dom
