@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import { useRef } from 'react'
 export function CustomButton ({ onClick = () => {}, isLoading = false, children }) {
   const btnRef = useRef(null)
-  console.log('Soy botón')
   const handleClick = () => {
     onClick(btnRef.current)
   }
