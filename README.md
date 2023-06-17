@@ -97,6 +97,80 @@ async function getPeople () {
 }
 ```
 
+### Promesas
+
+Una __promesa__ en Javascript (también conocida como __Promise__ en inglés) es un __objeto__ que representa un valor que puede estar disponible ahora, en el futuro, o nunca. 
+
+Una promesa se utiliza para trabajar con __tareas asíncronas__ de manera más sencilla y legible que utilizando callbacks, ya que permite trabajar con resultados futuros como si fuesen datos presentes. 
+
+Las promesas tienen tres estados posibles:
+
+- **Pendiente (pending)**: estado inicial de la promesa, antes de que se resuelva o se rechace.
+- **Cumplida (fulfilled)**: cuando la promesa se resuelve con éxito y se devuelve un valor.
+- **Rechazada (rejected)**: cuando la promesa falla y se devuelve un error.
+
+Las promesas tienen dos métodos principales:
+
+- **then()**: se utiliza para manejar la resolución de la promesa. Pueden encadenarse múltiples llamadas `then()` si es necesario.
+
+- **catch()**: se utiliza para manejar el rechazo o el error que se produce si la promesa falla.
+
+Aquí hay un ejemplo de una función que devuelve una promesa en Javascript:
+
+```javascript
+function promesaEjemplo() {
+  return new Promise((resolve, reject) => {
+    // Simulemos una tarea asíncrona
+    setTimeout(() => {
+      const exito = true; // cambiar a false para simular un error
+      if (exito) {
+        resolve("La promesa se resolvió con éxito.");
+      } else {
+        reject("La promesa falló.");
+      }
+    }, 2000);
+  });
+}
+```
+
+En este ejemplo, la función `promesaEjemplo()` devuelve una nueva promesa que se resuelve después de simular una tarea de dos segundos. Si `exito` es verdadero, la promesa se resuelve con un valor; de lo contrario, la promesa se rechaza con un error.
+
+Para consumir la promesa, se puede llamar a la función `then()` y `catch()` para manejar la resolución o el rechazo de la promesa, respectivamente:
+
+```javascript
+promesaEjemplo()
+  .then((resultado) => {
+    console.log(resultado); // muestra "La promesa se resolvió con éxito."
+  })
+  .catch((error) => {
+    console.error(error); // muestra "La promesa falló."
+  });
+``` 
+
+En el caso anterior, debido a que `exito` es verdadero, la promesa se resuelve con éxito, por lo que el valor "La promesa se resolvió con éxito." se muestra en la consola.
+
+Otro ejemplo: 
+
+```js
+let num1 = 8
+let num2 = 1
+const dividir = (dividendo, divisor) => {
+  if (divisor === 0)
+    return false
+  else return dividendo / divisor
+}
+const sumar = new Promise((resolve, reject) => {
+  setTimeout(()=>{
+    if (dividir(num1,num2)!==false) resolve(dividir(num1,num2))
+    else reject('No es posible dividir por 0')
+  },3000)
+})
+
+sumar
+  .then(console.log)
+  .catch(console.error)
+```
+
 ### Array.prototype.map
 
 > El método map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
@@ -333,7 +407,6 @@ const MovieItem = memo(({ title }) => {
 
 
 
-  # Sesión 12
+  # Sesión 13
 
-  - Firebase
-  - React Router Dom
+  - [Proyecto de portafolio](https://github.com/webferrol/react-portfolio)
