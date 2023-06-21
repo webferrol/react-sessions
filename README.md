@@ -417,7 +417,59 @@ const MovieItem = memo(({ title }) => {
 - [Ejemplo completo del extracto del código de arriba](./components/Memo.jsx)
 - Para ver ejemplos de uso ir a la documentación de react para la utilización del [método memo](https://es.react.dev/reference/react/memo).
 
+## Ejemplo de gestión de un formulario
 
+```js
+import React, { useState } from 'react'
+
+export function ExperiencePage () {
+  const [nombre, setNombre] = useState('')
+  const [apellidos, setApellidos] = useState('')
+
+  const handleNombre = e => {
+    // e.target.value
+    const { target } = e // Desestructuro
+    setNombre(target.value)
+  }
+
+  const handleApellidos = e => {
+    setApellidos(e.target.value) // No desestructuro
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault() // Paramos envío de formulario
+    // A partir de aquí lo que queramos: cargar un array, login, guardar en BBDD
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <legend>Info de {nombre} {apellidos}</legend>
+      <div>
+        <label htmlFor='nombre'>Nombre</label>
+        {/* value es una props y de sólo lectura para solucionarlo método onChange */}
+        <input
+          type='text'
+          name='nombre'
+          id='nombre'
+          value={nombre}
+          onChange={handleNombre}
+        />
+      </div>
+      <div>
+        <label htmlFor='apellidos'>Apellidos</label>
+        <input
+          type='text'
+          name='apellidos'
+          id='apellidos'
+          value={apellidos}
+          onChange={handleApellidos}
+        />
+      </div>
+      <button>Enviar</button>
+    </form>
+  )
+}
+```
 
 ## Ejercicios
 
