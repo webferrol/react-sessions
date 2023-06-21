@@ -367,6 +367,38 @@ function EjemploRef ({ initialValue }) {
 __useId__ es un Hook de React para generar IDs únicos que se pueden pasar a los atributos de accesibilidad.
 [Ejemplo implementado](./components/CustomInput.jsx)
 
+### useContext
+
+La utilización de este __hook__ va emparejado con el método __createContext__ de __React__ que prepara un componente funcional (un entorno o contexto de trabajo) para todos sus componentes funcionales descendientes (__children__). Este contexto nos permite almacenar información (variables) y métodos de trabajo (funciones) que evitan la utilización de __props__ para la comunicación padre hijo o el tan temido prop drilling.
+
+  El __Prop__ Drilling es una paso del desarrollo que ocurre cuando necesitamos obtener datos que están en varias capas en el árbol de componentes React. [Más información](https://es.react.dev/learn/passing-data-deeply-with-context#the-problem-with-passing-props)
+
+👁️👁️👁️ No sustituye las variables de estado generados con __useState__. Simplemente se trata de un modo de comunicación entre los componentes. Fíjate en el siguiente código:
+
+```js
+const ThemeContext = createContext('light');
+```
+Este valor __light__ nunca cambia. React solo usa este valor como respaldo si no puede encontrar un proveedor coincidente arriba.
+
+Para hacer que el contexto cambie con el tiempo, __agrega estado__ y envuelve los componentes en un proveedor de contexto. Ejemplo:
+
+```js
+function MyPage() {
+  const [theme, setTheme] = useState('dark')
+  return (
+    <ThemeContext.Provider value={theme}>
+      <Form />
+      <Button onClick={() => {
+        setTheme('light')
+      }}>
+        Cambiar a tema claro
+      </Button>
+    </ThemeContext.Provider>
+  );
+}
+```
+
+
 ## Memo
 
 __memo__ te permite saltarte el rerenderizado de un componente cuando sus props no han cambiado.
@@ -407,6 +439,6 @@ const MovieItem = memo(({ title }) => {
 
 
 
-  # Sesión 13
+  # Proyecto
 
   - [Proyecto de portafolio](https://github.com/webferrol/react-portfolio)
