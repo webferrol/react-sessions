@@ -1,6 +1,6 @@
 // Documentación: https://firebase.google.com/docs/firestore?hl=es-419
 import { db } from './firebase'
-import { collection, addDoc, getDocs, getDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore'
+import { collection, addDoc, getDocs, getDoc, deleteDoc, doc, updateDoc, serverTimestamp } from 'firebase/firestore'
 
 /**
  *
@@ -8,7 +8,7 @@ import { collection, addDoc, getDocs, getDoc, deleteDoc, doc, updateDoc } from '
  * @param {Object} data objeto en el que estan almacenados los datos del formulario: Ejemplo: {nombre: "",descripcion_breve: "",descripcion: "",fecha: Timestamp}
  * @return {Object} El Objeto insertado con varias propiedades interesantes entre ello el id
  */
-export const addDocument = async (uid, data) => await addDoc(collection(db, uid), data)
+export const addDocument = async (uid, data) => await addDoc(collection(db, uid), { ...data, createdAt: serverTimestamp() })
 
 /**
  *
