@@ -1,0 +1,47 @@
+rules_version = '2';
+service cloud.firestore { 
+  match /databases/{database}/documents {
+    //Denegamos todo por sistema
+  	match /{document=**}{
+    	allow read,write: if false;
+    }
+    //Profile del usuario
+    match /userProfile/{document=**} {
+      allow read: if true;
+      allow create: if request.auth.uid == request.resource.data.author_uid;
+      allow update, delete: if request.auth.uid == resource.data.author_uid;
+    }
+    //Experiencia laboral
+    match /workExperience/{document=**} {
+      allow read: if true;
+      allow write: if request.auth.uid == 'A3XCNrsWf4Sol7k7Ny2dybRo6IJ3'
+    }
+    
+     //Room
+    match /rooms/{room}{   
+      allow read: if isAuth();
+      //request.resource.data hace referencia al objeto que existirá
+      //resource.data hacer referencia al objeto que ya existe
+      allow create,update: if request.auth.uid == request.resource.data.uid && request.resource.data.name.size()>0;
+      allow delete: if request.auth.uid == resource.data.uid;
+     
+    }
+    //Para poder editar contenido de forma recursiva del perfil de usuario a cada una de las rooms
+    match /{path=**}/rooms/{room}{
+    	allow read: if isAuth();
+    } 
+    //messages de las rooms
+    match /{path=**}/messages/{message}{
+    	allow read,delete,create: if request.auth.uid != null;
+      allow update: if request.auth.uid == request.resource.data.uid;
+    }
+    
+    //Funciones
+    function isAuth(){
+      return request.auth != null;
+    }
+    function isStringRequired(prop){
+      return prop is string && prop.size()>0;
+    }   
+  }
+}
