@@ -494,3 +494,4 @@ export function ExperiencePage () {
   # Proyecto
 
   - [Proyecto de portafolio](https://github.com/webferrol/react-portfolio)
+  - [Solución a problema de 404 de React en Netlify](https://codewithnico.com/problema-404-netlify-react/)
