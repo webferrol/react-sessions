@@ -526,21 +526,10 @@ function ProductsApp () {
 
 ## Ejercicios
 
-1. [x] Crea un Componente botón y renderízalo en tu app
-
-2. [x] Crear un fichero js con un __objeto literal__ con la información de tu nombre, apellidos y edad. Expórtalo y muestra los resultados en tu __app__
-
-3. [x] <img src='./assets/counter.png' width='600' alt='CounterApp'>
-  - [Una solución](https://github.com/webferrol/react-counter-project.git)
-
-4. [x] <img src='./assets/formulario.jpg' width='600' alt='Simple Form'>
-  - [Una solución](https://github.com/webferrol/react-simple-form.git)
-
-5. [x] <img src='./assets/star-wars-api.png' width='600' alt='Star Wars API'>
-  - [Una solución](https://github.com/webferrol/react-swapi)
-
-6. [x] Github Avatar y Todo List
-  - [Una solución](https://github.com/webferrol/react-github_avatar-todolist)
+1. [x] <img src='./assets/counter.png' width='600' alt='CounterApp'>
+2. [x] <img src='./assets/formulario.jpg' width='600' alt='Simple Form'>
+3. [x] <img src='./assets/star-wars-api.png' width='600' alt='Star Wars API'>
+4. [x] Github Avatar y Todo List
 
 
 
