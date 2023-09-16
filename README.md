@@ -2,213 +2,9 @@
 
 [Invitación a Classroom](https://classroom.google.com/c/NTg0NTY4MTAxMTg4?cjc=eyufnhy)
 
-## JavaScript imprescindible
+## JavaScript
 
-### import / export
-
-1. Exportación: primitivos, no primitivos, funciones
-
-```js
-export let variable_name
-export function function_name() {
-  // Statements
-}
-export const USUARIO = { name: 'Xurxo', edad: 50 }
-```
-
-2. Exportación por defecto
-
-```js
-export default function app () {
-    // Statements
-}
-```
-
-3. Importaciones (nombradas y por defecto)
-
-```js
-import miApp, { variable_name, USUARIO, function_name } from 'path_to_file'
-```
-
-### Destructuring
-
-```jsx
-const YO = { 
-  nombre: 'Xurxo',
-  apellido1: 'González',
-  apellido2: 'Tenreiro'
-}
-
-// Desetructuración de un "Objeto Literal"
-const { nombre, apellido1, apellido2 = 'Desconocido' } = YO
-
-```
-
-La __desestructuración__ la utilizamos siempre aunque a veces no nos demos cuenta. Por ejemplo cuando desestructuramos las __props__ de un componente:
-
-```jsx
-function MiApp ({ value }) {
-  return (<div>{value}</div>)
-}
-```
-
-También podemos _desestructurar_ un __array__:
-
-```jsx
-const numeros = [1, 2, 3]
-
-const [num1, num2, num3] = numeros
-```
-### Búsqueda en arrays
-
-Sólo algunos ejemplos:
-
-- [Array.prototype.indexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
-- [Array.prototype.includes()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
-- [Array.prototype.some()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-  
-### Fetch
-
-Para obtener datos de un servidor donde el __end point__ es una __API Rest__
-
-- [fetch](https://developer.mozilla.org/es/docs/Web/API/fetch)
-
-__fetch__ es un __método__ del objeto global (en caso del navegador sería __window__) que lanza una petición de un recurso de red. Lo que devuelve es una promesa.
-
-```js
-Promise<Response> fetch(input[, init]);
-```
-
-En el ejemplo que veremos a continuación el __input__ será un __string__ que representa la localización del recurso de red que deseamos obtener. En este caso un fichero plano __json__ que posteriormente lo convertiremos en un __objeto javascript__ con el método __json()__
-
-```js
-fetch('https://swapi.dev/api/people/1')
-  .then(response => response.json())
-  .then(data => console.log(data))
-```
-
-Existe también otra alternativa de lanzar fetch a través de una función asíncrona
-
-```js
-async function getPeople () {
-  const response = await fetch('https://swapi.dev/api/people/1')
-  const data = await response.json()
-  console.log(data)
-}
-```
-
-### Promesas
-
-Una __promesa__ en Javascript (también conocida como __Promise__ en inglés) es un __objeto__ que representa un valor que puede estar disponible ahora, en el futuro, o nunca. 
-
-Una promesa se utiliza para trabajar con __tareas asíncronas__ de manera más sencilla y legible que utilizando callbacks, ya que permite trabajar con resultados futuros como si fuesen datos presentes. 
-
-Las promesas tienen tres estados posibles:
-
-- **Pendiente (pending)**: estado inicial de la promesa, antes de que se resuelva o se rechace.
-- **Cumplida (fulfilled)**: cuando la promesa se resuelve con éxito y se devuelve un valor.
-- **Rechazada (rejected)**: cuando la promesa falla y se devuelve un error.
-
-Las promesas tienen dos métodos principales:
-
-- **then()**: se utiliza para manejar la resolución de la promesa. Pueden encadenarse múltiples llamadas `then()` si es necesario.
-
-- **catch()**: se utiliza para manejar el rechazo o el error que se produce si la promesa falla.
-
-Aquí hay un ejemplo de una función que devuelve una promesa en Javascript:
-
-```javascript
-function promesaEjemplo() {
-  return new Promise((resolve, reject) => {
-    // Simulemos una tarea asíncrona
-    setTimeout(() => {
-      const exito = true; // cambiar a false para simular un error
-      if (exito) {
-        resolve("La promesa se resolvió con éxito.");
-      } else {
-        reject("La promesa falló.");
-      }
-    }, 2000);
-  });
-}
-```
-
-En este ejemplo, la función `promesaEjemplo()` devuelve una nueva promesa que se resuelve después de simular una tarea de dos segundos. Si `exito` es verdadero, la promesa se resuelve con un valor; de lo contrario, la promesa se rechaza con un error.
-
-Para consumir la promesa, se puede llamar a la función `then()` y `catch()` para manejar la resolución o el rechazo de la promesa, respectivamente:
-
-```javascript
-promesaEjemplo()
-  .then((resultado) => {
-    console.log(resultado); // muestra "La promesa se resolvió con éxito."
-  })
-  .catch((error) => {
-    console.error(error); // muestra "La promesa falló."
-  });
-``` 
-
-En el caso anterior, debido a que `exito` es verdadero, la promesa se resuelve con éxito, por lo que el valor "La promesa se resolvió con éxito." se muestra en la consola.
-
-Otro ejemplo: 
-
-```js
-let num1 = 8
-let num2 = 1
-const dividir = (dividendo, divisor) => {
-  if (divisor === 0)
-    return false
-  else return dividendo / divisor
-}
-const sumar = new Promise((resolve, reject) => {
-  setTimeout(()=>{
-    if (dividir(num1,num2)!==false) resolve(dividir(num1,num2))
-    else reject('No es posible dividir por 0')
-  },3000)
-})
-
-sumar
-  .then(console.log)
-  .catch(console.error)
-```
-
-### Array.prototype.map
-
-> El método map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
-> <cite>[Mozilla Docs](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)<cite>
-
-__IMPORTANTE__: Los resultados de cada __iteración__ se deben __retornar__.
-
-```jsx
-var numbers = [1, 5, 10, 15]
-var doubles = numbers.map(function (x) {
-   return x * 2; // AQUÍ EL RETORNO
-})
-// doubles is now [2, 10, 20, 30]
-// numbers is still [1, 5, 10, 15]
-```
-
-Para __renderizar listas__ a través de expresiones son perfectas. Ejemplo de [react.dev](https://es.react.dev/learn#rendering-lists):
-
-```jsx
-const products = [
-  { title: 'Cabbage', id: 1 },
-  { title: 'Garlic', id: 2 },
-  { title: 'Apple', id: 3 },
-]
-
-function ProductsApp () {
-  const listItems = products.map(product =>
-    <li key={product.id}>
-      {product.title}
-    </li>
-  )
-
-    <ul>{listItems}</ul>
-  return (
-  )
-}
-```
-
+React es ante todo __JavaScript__ por tanto hay que tener nociones de un mínimo de [JavaScript imprescindible](#javaScript-imprescindible)
 
 ## React. ¿Qué es?
 
@@ -231,13 +27,63 @@ Estas serán colocadas en el __entry point__ de nuestro proyecto. Por ejemplo en
 
 En __react__ los __componentes__ son __funciones__ que retornan un __elemento react__ y no un __elemento del DOM__
 
+Destacar que el nombre de estas funciones empiezan con la primera letra en mayúscula (__Pascal case__)
+
 ```jsx
 /*
  * Function Component
- * @return {React.Element} ¡No retorna un DOM.Element'
+ * @return {React.Element} - ¡No retorna un DOM.Element'
 */
-function XurxoApp () {
-  return (<>Soy Xurxo</>)
+function Button ({ text }) {
+   return (
+    <button>{text}</button>
+  )
+}
+```
+Por ejemplo, el siguiente código utiliza el componente Button para crear un botón con el texto "+ 1":
+
+```jsx
+const App = () => {
+  return (
+    <>
+      <Button text="+ 1" />
+    </>
+  )
+}
+```
+
+## Fragmento
+
+Un __fragmento__ en React es un elemento React que __no tiene ningún nodo DOM asociado__. Los fragmentos se utilizan para agrupar __elementos React sin agregar nodos extra al DOM__, por ejemplo una etiqueta __div__.
+
+Los fragmentos se pueden utilizar para varios propósitos, como:
+
+- Agrupar elementos con texto.
+- Renderizar una lista de fragmentos.
+- Asignar múltiples elementos a una variable.
+- Pasar fragmentos como props.
+
+Ejemplo con sintaxis larga:
+
+```jsx
+import React from 'react'
+const App = () => {
+  return (
+    <React.Fragement>
+      <Button text="+ 1" />
+    </React.Fragment>
+  )
+}
+```
+Ejemplo con sintaxis abreviada
+
+```jsx
+const App = () => {
+  return (
+    <>
+      <Button text="+ 1" />
+    </>
+  )
 }
 ```
 
@@ -467,6 +313,213 @@ export function ExperiencePage () {
       </div>
       <button>Enviar</button>
     </form>
+  )
+}
+```
+
+## JavaScript imprescindible
+
+### import / export
+
+1. Exportación: primitivos, no primitivos, funciones
+
+```js
+export let variable_name
+export function function_name() {
+  // Statements
+}
+export const USUARIO = { name: 'Xurxo', edad: 50 }
+```
+
+2. Exportación por defecto
+
+```js
+export default function app () {
+    // Statements
+}
+```
+
+3. Importaciones (nombradas y por defecto)
+
+```js
+import miApp, { variable_name, USUARIO, function_name } from 'path_to_file'
+```
+
+### Destructuring
+
+```jsx
+const YO = { 
+  nombre: 'Xurxo',
+  apellido1: 'González',
+  apellido2: 'Tenreiro'
+}
+
+// Desetructuración de un "Objeto Literal"
+const { nombre, apellido1, apellido2 = 'Desconocido' } = YO
+
+```
+
+La __desestructuración__ la utilizamos siempre aunque a veces no nos demos cuenta. Por ejemplo cuando desestructuramos las __props__ de un componente:
+
+```jsx
+function MiApp ({ value }) {
+  return (<div>{value}</div>)
+}
+```
+
+También podemos _desestructurar_ un __array__:
+
+```jsx
+const numeros = [1, 2, 3]
+
+const [num1, num2, num3] = numeros
+```
+### Búsqueda en arrays
+
+Sólo algunos ejemplos:
+
+- [Array.prototype.indexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+- [Array.prototype.includes()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+- [Array.prototype.some()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+  
+### Fetch
+
+Para obtener datos de un servidor donde el __end point__ es una __API Rest__
+
+- [fetch](https://developer.mozilla.org/es/docs/Web/API/fetch)
+
+__fetch__ es un __método__ del objeto global (en caso del navegador sería __window__) que lanza una petición de un recurso de red. Lo que devuelve es una promesa.
+
+```js
+Promise<Response> fetch(input[, init]);
+```
+
+En el ejemplo que veremos a continuación el __input__ será un __string__ que representa la localización del recurso de red que deseamos obtener. En este caso un fichero plano __json__ que posteriormente lo convertiremos en un __objeto javascript__ con el método __json()__
+
+```js
+fetch('https://swapi.dev/api/people/1')
+  .then(response => response.json())
+  .then(data => console.log(data))
+```
+
+Existe también otra alternativa de lanzar fetch a través de una función asíncrona
+
+```js
+async function getPeople () {
+  const response = await fetch('https://swapi.dev/api/people/1')
+  const data = await response.json()
+  console.log(data)
+}
+```
+
+### Promesas
+
+Una __promesa__ en Javascript (también conocida como __Promise__ en inglés) es un __objeto__ que representa un valor que puede estar disponible ahora, en el futuro, o nunca. 
+
+Una promesa se utiliza para trabajar con __tareas asíncronas__ de manera más sencilla y legible que utilizando callbacks, ya que permite trabajar con resultados futuros como si fuesen datos presentes. 
+
+Las promesas tienen tres estados posibles:
+
+- **Pendiente (pending)**: estado inicial de la promesa, antes de que se resuelva o se rechace.
+- **Cumplida (fulfilled)**: cuando la promesa se resuelve con éxito y se devuelve un valor.
+- **Rechazada (rejected)**: cuando la promesa falla y se devuelve un error.
+
+Las promesas tienen dos métodos principales:
+
+- **then()**: se utiliza para manejar la resolución de la promesa. Pueden encadenarse múltiples llamadas `then()` si es necesario.
+
+- **catch()**: se utiliza para manejar el rechazo o el error que se produce si la promesa falla.
+
+Aquí hay un ejemplo de una función que devuelve una promesa en Javascript:
+
+```javascript
+function promesaEjemplo() {
+  return new Promise((resolve, reject) => {
+    // Simulemos una tarea asíncrona
+    setTimeout(() => {
+      const exito = true; // cambiar a false para simular un error
+      if (exito) {
+        resolve("La promesa se resolvió con éxito.");
+      } else {
+        reject("La promesa falló.");
+      }
+    }, 2000);
+  });
+}
+```
+
+En este ejemplo, la función `promesaEjemplo()` devuelve una nueva promesa que se resuelve después de simular una tarea de dos segundos. Si `exito` es verdadero, la promesa se resuelve con un valor; de lo contrario, la promesa se rechaza con un error.
+
+Para consumir la promesa, se puede llamar a la función `then()` y `catch()` para manejar la resolución o el rechazo de la promesa, respectivamente:
+
+```javascript
+promesaEjemplo()
+  .then((resultado) => {
+    console.log(resultado); // muestra "La promesa se resolvió con éxito."
+  })
+  .catch((error) => {
+    console.error(error); // muestra "La promesa falló."
+  });
+``` 
+
+En el caso anterior, debido a que `exito` es verdadero, la promesa se resuelve con éxito, por lo que el valor "La promesa se resolvió con éxito." se muestra en la consola.
+
+Otro ejemplo: 
+
+```js
+let num1 = 8
+let num2 = 1
+const dividir = (dividendo, divisor) => {
+  if (divisor === 0)
+    return false
+  else return dividendo / divisor
+}
+const sumar = new Promise((resolve, reject) => {
+  setTimeout(()=>{
+    if (dividir(num1,num2)!==false) resolve(dividir(num1,num2))
+    else reject('No es posible dividir por 0')
+  },3000)
+})
+
+sumar
+  .then(console.log)
+  .catch(console.error)
+```
+
+### Array.prototype.map
+
+> El método map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
+> <cite>[Mozilla Docs](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)<cite>
+
+__IMPORTANTE__: Los resultados de cada __iteración__ se deben __retornar__.
+
+```jsx
+var numbers = [1, 5, 10, 15]
+var doubles = numbers.map(function (x) {
+   return x * 2; // AQUÍ EL RETORNO
+})
+// doubles is now [2, 10, 20, 30]
+// numbers is still [1, 5, 10, 15]
+```
+
+Para __renderizar listas__ a través de expresiones son perfectas. Ejemplo de [react.dev](https://es.react.dev/learn#rendering-lists):
+
+```jsx
+const products = [
+  { title: 'Cabbage', id: 1 },
+  { title: 'Garlic', id: 2 },
+  { title: 'Apple', id: 3 },
+]
+
+function ProductsApp () {
+  const listItems = products.map(product =>
+    <li key={product.id}>
+      {product.title}
+    </li>
+  )
+
+    <ul>{listItems}</ul>
+  return (
   )
 }
 ```
