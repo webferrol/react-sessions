@@ -374,6 +374,9 @@ const numeros = [1, 2, 3]
 
 const [num1, num2, num3] = numeros
 ```
+
+[Ejercicio](./destructuring.md)
+
 ### Búsqueda en arrays
 
 Sólo algunos ejemplos:
