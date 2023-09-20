@@ -529,7 +529,54 @@ function ProductsApp () {
 }
 ```
 
-[Ejercicio con map()](./map.md)
+[Ejercicios con map()](./map.md)
+
+### Clonado de NO PRIMITIVOS (arrays y objetos)
+
+
+El __clonado de datos__ en JavaScript es el proceso de copiar una estructura de datos existente en una nueva estructura de datos. Esto se puede hacer para crear una copia independiente de los datos, o para modificar la copia sin afectar la estructura de datos original.
+
+Hay __dos tipos__  principales de clonado de datos en JavaScript:
+
+1. Clonado superficial: 
+
+Este tipo de clonado solo copia la superficie de la estructura de datos, creando una nueva estructura de datos que contiene referencias a los mismos datos subyacentes. Esto significa que los cambios realizados en la copia afectarán la estructura de datos original.
+
+2. Clonado profundo: 
+
+Este tipo de clonado copia toda la estructura de datos, creando una nueva estructura de datos con sus propios datos subyacentes. Esto significa que los cambios realizados en la copia no afectarán la estructura de datos original.
+
+#### Clonado superficial (shallow clone)
+
+El operador spread, también conocido como __spread operator__, es un operador de asignación que permite expandir los elementos de un array o objeto en una nueva estructura de datos.
+
+El operador spread se puede usar para realizar un __clonado superficial__ de un array o objeto. Para ello, se utiliza el operador spread para copiar los elementos del array o objeto original en una nueva estructura de datos.
+
+```js
+const numeros = [1, 2, 3, 4, 5];
+
+const numerosCopia = [...numeros];
+
+console.log(numerosCopia); // [1, 2, 3, 4, 5]
+```
+### Clonado profundo (deep clone)
+
+El método __structuredClone()__ es un método nativo de JavaScript que permite realizar un clonado profundo de una estructura de datos. Este método crea una nueva copia de la estructura de datos original, conservando todos los datos subyacentes, incluyendo los objetos y arreglos anidados.
+
+El método structuredClone() es útil para crear copias independientes de estructuras de datos complejas, o para modificar una copia sin afectar la estructura de datos original.
+
+```js
+const numeros = [1, 2, 3, 4, 5];
+
+const numerosCopia = structuredClone(numeros);
+
+numerosCopia[0] = 10;
+
+console.log(numeros); // [1, 2, 3, 4, 5]
+console.log(numerosCopia); // [10, 2, 3, 4, 5]
+
+```
+[Ejercicio de clonado](./clone.md)
 
 ## Ejercicios
 
