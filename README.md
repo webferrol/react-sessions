@@ -529,6 +529,8 @@ function ProductsApp () {
 }
 ```
 
+[Ejercicio con map()](./map.md)
+
 ## Ejercicios
 
 1. [x] <img src='./assets/counter.png' width='600' alt='CounterApp'>
