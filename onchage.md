@@ -83,8 +83,17 @@ function ChangePasswordApp () {
 export default ChangePasswordApp
 ```
 
+Para el código del error podemos utilizar
+
+```jsx
+<div className="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+  <p className="font-bold">Informational message</p>
+  <p className="text-sm">Some additional text to explain said message.</p>
+</div>
+```
+
 # Utilizar
 
-1. __Atributo__ onClick
+1. __Atributo__ onSubmit
 2. __Atributo__ onChange
 3. __Hook__ useState
