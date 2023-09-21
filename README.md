@@ -21,9 +21,7 @@
   - [Promesas](#Promesas)
   - [Array.prototype.map](#Arrayprototypemap)
   - [Clonado de NO PRIMITIVOS (arrays y objetos)](#Clonado-de-NO-PRIMITIVOS-arrays-y-objetos)
-  - [Clonado profundo (deep clone)](#Clonado-profundo-deep-clone)
 - [Ejercicios](#Ejercicios)
-
 
 
 # React
@@ -587,7 +585,8 @@ const numerosCopia = [...numeros];
 
 console.log(numerosCopia); // [1, 2, 3, 4, 5]
 ```
-## Clonado profundo (deep clone)
+
+### Clonado profundo (deep clone)
 
 El método __structuredClone()__ es un método nativo de JavaScript que permite realizar un clonado profundo de una estructura de datos. Este método crea una nueva copia de la estructura de datos original, conservando todos los datos subyacentes, incluyendo los objetos y arreglos anidados.
 
