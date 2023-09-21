@@ -1,12 +1,40 @@
+# Classroom y tabla de contenidos
+
+- [Invitación a Classroom](https://classroom.google.com/c/NTg0NTY4MTAxMTg4?cjc=eyufnhy)
+
+- [React](#React)
+  - [React. ¿Qué es?](#React-¿Qué-es)
+  - [Librerías de React](#Librerías-de-React)
+  - [Functional Component](#Functional-Component)
+  - [Fragmento](#Fragmento)
+  - [Impresión de expresiones (variables, constantes, literales, objetos, retorno de funciones ....)](#Impresión-de-expresiones-variables-constantes-literales-objetos-retorno-de-funciones-)
+  - [Props](#Props)
+  - [Responder eventos](#Responder-eventos)
+  - [Hooks](#Hooks)
+  - [Memo](#Memo)
+  - [Ejemplo de gestión de un formulario](#Ejemplo-de-gestión-de-un-formulario)
+- [JavaScript imprescindible](#JavaScript-imprescindible)
+  - [import / export](#import--export)
+  - [Destructuring](#Destructuring)
+  - [Búsqueda en arrays](#Búsqueda-en-arrays)
+  - [Fetch](#Fetch)
+  - [Promesas](#Promesas)
+  - [Array.prototype.map](#Arrayprototypemap)
+  - [Clonado de NO PRIMITIVOS (arrays y objetos)](#Clonado-de-NO-PRIMITIVOS-arrays-y-objetos)
+  - [Clonado profundo (deep clone)](#Clonado-profundo-deep-clone)
+- [Ejercicios](#Ejercicios)
+
+
+
 # React
 
-[Invitación a Classroom](https://classroom.google.com/c/NTg0NTY4MTAxMTg4?cjc=eyufnhy)
+## React. ¿Qué es?
 
-## JavaScript
+### React es JavaScript
 
 React es ante todo __JavaScript__ por tanto hay que tener nociones de un mínimo de [JavaScript imprescindible](#javaScript-imprescindible)
 
-## React. ¿Qué es?
+### React es una librería/biblioteca
 
 Como indica su [página oficial](https://es.react.dev/) se trata de una __biblioteca__ o __librería__ para la creación de __interfaces__ des usuario _web_ y _nativas_.
 
@@ -319,9 +347,9 @@ export function ExperiencePage () {
 
 [Ejercicio](./onchage.md)
 
-## JavaScript imprescindible
+# JavaScript imprescindible
 
-### import / export
+## import / export
 
 1. Exportación: primitivos, no primitivos, funciones
 
@@ -347,7 +375,7 @@ export default function app () {
 import miApp, { variable_name, USUARIO, function_name } from 'path_to_file'
 ```
 
-### Destructuring
+## Destructuring
 
 ```jsx
 const YO = { 
@@ -379,7 +407,7 @@ const [num1, num2, num3] = numeros
 
 [Ejercicio](./destructuring.md)
 
-### Búsqueda en arrays
+## Búsqueda en arrays
 
 Sólo algunos ejemplos:
 
@@ -387,7 +415,7 @@ Sólo algunos ejemplos:
 - [Array.prototype.includes()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 - [Array.prototype.some()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
   
-### Fetch
+## Fetch
 
 Para obtener datos de un servidor donde el __end point__ es una __API Rest__
 
@@ -417,7 +445,7 @@ async function getPeople () {
 }
 ```
 
-### Promesas
+## Promesas
 
 Una __promesa__ en Javascript (también conocida como __Promise__ en inglés) es un __objeto__ que representa un valor que puede estar disponible ahora, en el futuro, o nunca. 
 
@@ -491,7 +519,7 @@ sumar
   .catch(console.error)
 ```
 
-### Array.prototype.map
+## Array.prototype.map
 
 > El método map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
 > <cite>[Mozilla Docs](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)<cite>
@@ -531,7 +559,7 @@ function ProductsApp () {
 
 [Ejercicios con map()](./map.md)
 
-### Clonado de NO PRIMITIVOS (arrays y objetos)
+## Clonado de NO PRIMITIVOS (arrays y objetos)
 
 
 El __clonado de datos__ en JavaScript es el proceso de copiar una estructura de datos existente en una nueva estructura de datos. Esto se puede hacer para crear una copia independiente de los datos, o para modificar la copia sin afectar la estructura de datos original.
@@ -546,7 +574,7 @@ Este tipo de clonado solo copia la superficie de la estructura de datos, creando
 
 Este tipo de clonado copia toda la estructura de datos, creando una nueva estructura de datos con sus propios datos subyacentes. Esto significa que los cambios realizados en la copia no afectarán la estructura de datos original.
 
-#### Clonado superficial (shallow clone)
+### Clonado superficial (shallow clone)
 
 El operador spread, también conocido como __spread operator__, es un operador de asignación que permite expandir los elementos de un array o objeto en una nueva estructura de datos.
 
@@ -559,7 +587,7 @@ const numerosCopia = [...numeros];
 
 console.log(numerosCopia); // [1, 2, 3, 4, 5]
 ```
-### Clonado profundo (deep clone)
+## Clonado profundo (deep clone)
 
 El método __structuredClone()__ es un método nativo de JavaScript que permite realizar un clonado profundo de una estructura de datos. Este método crea una nueva copia de la estructura de datos original, conservando todos los datos subyacentes, incluyendo los objetos y arreglos anidados.
 
@@ -578,16 +606,9 @@ console.log(numerosCopia); // [10, 2, 3, 4, 5]
 ```
 [Ejercicio de clonado](./clone.md)
 
-## Ejercicios
+# Ejercicios
 
 1. [x] <img src='./assets/counter.png' width='600' alt='CounterApp'>
 2. [x] <img src='./assets/formulario.jpg' width='600' alt='Simple Form'>
 3. [x] <img src='./assets/star-wars-api.png' width='600' alt='Star Wars API'>
 4. [x] Github Avatar y Todo List
-
-
-
-  # Proyecto
-
-  - [Proyecto de portafolio](https://github.com/webferrol/react-portfolio)
-  - [Solución a problema de 404 de React en Netlify](https://codewithnico.com/problema-404-netlify-react/)
