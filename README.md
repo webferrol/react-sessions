@@ -607,7 +607,8 @@ console.log(numerosCopia); // [10, 2, 3, 4, 5]
 
 # Ejercicios
 
-1. [x] <img src='./assets/counter.png' width='600' alt='CounterApp'>
-2. [x] <img src='./assets/formulario.jpg' width='600' alt='Simple Form'>
-3. [x] <img src='./assets/star-wars-api.png' width='600' alt='Star Wars API'>
-4. [x] Github Avatar y Todo List
+1. [] [Estructura en __componentes funcionales__ el siguiente código](./react-components.md)
+2. [] <img src='./assets/counter.png' width='600' alt='CounterApp'>
+3. [] <img src='./assets/formulario.jpg' width='600' alt='Simple Form'>
+4. [] <img src='./assets/star-wars-api.png' width='600' alt='Star Wars API'>
+5. [] Github Avatar y Todo List
