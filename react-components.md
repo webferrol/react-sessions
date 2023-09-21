@@ -1,6 +1,7 @@
 # Ejercicio
 
-Estructura en __componentes funcionales__ el siguiente código:
+- Instala tailwind css en vite
+- Estructura en __componentes funcionales__ el siguiente código:
 
 ```jsx
 function CardApp() {
