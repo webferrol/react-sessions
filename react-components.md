@@ -1,6 +1,7 @@
 # Ejercicio
 
 - Instala tailwind css en vite
+- Hay un mock llamado data.json en la carpeta de mocks
 - Estructura en __componentes funcionales__ el siguiente código:
 
 ```jsx
