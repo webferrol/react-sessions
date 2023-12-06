@@ -1,6 +1,9 @@
-# Classroom y tabla de contenidos
+# React
 
-- [Invitación a Classroom](https://classroom.google.com/c/NTg0NTY4MTAxMTg4?cjc=eyufnhy)
+>[!NOTE]
+>[Invitación a Classroom](https://classroom.google.com/c/NTg0NTY4MTAxMTg4?cjc=eyufnhy)
+
+## Tabla de contenidos
 
 - [React](#React)
   - [React. ¿Qué es?](#React-¿Qué-es)
