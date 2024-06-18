@@ -232,6 +232,128 @@ function EjemploRef ({ initialValue }) {
   )
 }
 ```
+
+#### Casos de uso
+
+`useRef` es un hook en React que permite crear una referencia mutable que se puede asignar a un elemento del DOM o a cualquier valor que desees mantener durante el ciclo de vida de un componente sin causar una nueva renderización. Aquí hay algunos casos de uso comunes para `useRef`:
+
+##### 1. Acceso a Elementos del DOM
+
+El caso de uso más común de `useRef` es acceder directamente a elementos del DOM. Esto es útil cuando necesitas interactuar con el DOM directamente, por ejemplo, para enfocar un input.
+
+```jsx
+import React, { useRef, useEffect } from 'react';
+
+function InputFocus() {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  return <input ref={inputRef} type="text" />;
+}
+```
+
+##### 2. Mantener Valores Persistentes
+
+`useRef` puede mantener cualquier valor persistente entre renderizaciones sin causar una nueva renderización cuando cambia el valor. Esto es útil para almacenar cualquier tipo de dato que necesites mantener, como un contador de intervalos.
+
+```jsx
+import React, { useRef, useEffect } from 'react';
+
+function Timer() {
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      console.log('Tick');
+    }, 1000);
+
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  return <div>Check the console for ticks</div>;
+}
+```
+
+##### 3. Almacenar el Valor Anterior
+
+`useRef` también puede usarse para almacenar el valor anterior de una prop o estado para comparaciones.
+
+```jsx
+import React, { useRef, useEffect, useState } from 'react';
+
+function PreviousValue() {
+  const [count, setCount] = useState(0);
+  const prevCountRef = useRef();
+
+  useEffect(() => {
+    prevCountRef.current = count;
+  });
+
+  const prevCount = prevCountRef.current;
+
+  return (
+    <div>
+      <h1>Current: {count}</h1>
+      <h2>Previous: {prevCount}</h2>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+##### 4. Evitar Funciones Inline en Efectos
+
+Al evitar la creación de funciones inline dentro de efectos, puedes mejorar la performance del componente.
+
+```jsx
+import React, { useRef, useEffect } from 'react';
+
+function SmoothScroll({ scrollTo }) {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    containerRef.current.scrollTo({
+      top: scrollTo,
+      behavior: 'smooth',
+    });
+  }, [scrollTo]);
+
+  return <div ref={containerRef}>Your content here</div>;
+}
+```
+
+##### 5. Manejar Componentes Controlados y No Controlados
+
+`useRef` puede ser útil cuando trabajas con componentes controlados y no controlados, por ejemplo, un input que comienza como no controlado y luego se convierte en controlado.
+
+```jsx
+import React, { useRef, useState } from 'react';
+
+function ControlledUncontrolledInput() {
+  const inputRef = useRef(null);
+  const [value, setValue] = useState('');
+
+  const handleButtonClick = () => {
+    setValue(inputRef.current.value);
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleButtonClick}>Set Value</button>
+      <p>Controlled Value: {value}</p>
+    </div>
+  );
+}
+```
+
+**Conclusión**
+
+`useRef` es una herramienta poderosa en React que te permite interactuar con el DOM, mantener valores persistentes entre renderizaciones, almacenar valores anteriores, evitar funciones inline en efectos y manejar componentes controlados y no controlados de manera efectiva. Estos casos de uso cubren una amplia gama de escenarios que pueden mejorar la funcionalidad y rendimiento de tus componentes React.
+
 #### Solución a problemas
 
 - [No puedo obtener una ref a un componente personalizado](https://es.react.dev/reference/react/useRef#i-cant-get-a-ref-to-a-custom-component)
