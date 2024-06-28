@@ -525,6 +525,8 @@ function Component () {
 ### REGLA #1
 **Si un efecto secundario es desencadenado por un evento, coloca ese efecto secundario en un manejador de eventos.**
 
+[Ejemplo completo](./components/CustomInput.jsx)
+
 *Ejemplo:*
 Una tarea que se ejecuta como resultado de un evento de usuario, como un clic.
 
