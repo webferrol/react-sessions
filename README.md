@@ -470,6 +470,129 @@ export function ExperiencePage () {
 
 [Ejercicio](./onchage.md)
 
+# Efectos
+
+## Reglas
+
+### REGLA #0
+**Cuando un componente se renderiza, debe hacerlo sin generar efectos secundarios.**
+
+*Ejemplo:*
+Un componente debe enfocarse solo en la representación de la UI y no realizar tareas como la manipulación del DOM o la obtención de datos directamente en el cuerpo del componente.
+
+```jsx
+// Incorrecto:
+function MyComponent() {
+  // Efecto secundario directo en el renderizado
+  document.title = "Nuevo Título";
+
+  return <div>Hola, mundo</div>;
+}
+
+// Correcto:
+function MyComponent() {
+  return <div>Hola, mundo</div>;
+}
+```
+
+### REGLA #1
+**Si un efecto secundario es desencadenado por un evento, coloca ese efecto secundario en un manejador de eventos.**
+
+*Ejemplo:*
+Una tarea que se ejecuta como resultado de un evento de usuario, como un clic.
+
+```jsx
+function MyComponent() {
+  const handleClick = () => {
+    // Efecto secundario dentro del manejador de eventos
+    console.log("Botón clicado");
+  };
+
+  return <button onClick={handleClick}>Clic aquí</button>;
+}
+```
+
+### REGLA #2
+**Si un efecto secundario está sincronizando tu componente con algún sistema externo, coloca ese efecto secundario dentro de `useEffect`.**
+
+*Ejemplo:*
+Obtener datos de una API cuando el componente se monta.
+
+```jsx
+import { useEffect, useState } from 'react';
+
+function MyComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Efecto secundario para sincronizar con un sistema externo
+    fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []); // Se ejecuta solo una vez cuando el componente se monta
+
+  return <div>{data ? data.message : 'Cargando...'}</div>;
+}
+```
+
+### REGLA #3
+**Si un efecto secundario está sincronizando tu componente con algún sistema externo y ese efecto secundario necesita ejecutarse *antes* de que el navegador pinte la pantalla, coloca ese efecto secundario dentro de `useLayoutEffect`.**
+
+*Ejemplo:*
+Medir el tamaño de un elemento del DOM antes de pintar la pantalla.
+
+```jsx
+import { useLayoutEffect, useRef, useState } from 'react';
+
+function MyComponent() {
+  const divRef = useRef();
+  const [width, setWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    // Efecto secundario que se ejecuta antes de pintar
+    setWidth(divRef.current.offsetWidth);
+  }, []);
+
+  return <div ref={divRef} style={{ width: '100%' }}>Ancho: {width}px</div>;
+}
+```
+
+### REGLA #4
+**Si un efecto secundario está suscribiéndose a una tienda externa, utiliza el hook `useSyncExternalStore`.**
+
+*Ejemplo:*
+Suscribirse a una tienda externa para obtener datos en tiempo real.
+
+```jsx
+import { useSyncExternalStore } from 'react';
+
+// Funciones para suscribirse y obtener el estado de la tienda
+function subscribe(callback) {
+  const store = {
+    subscribe: (listener) => {
+      // Simulación de suscripción a una tienda externa
+      setInterval(() => {
+        listener();
+      }, 1000);
+    },
+    getSnapshot: () => Math.random() // Simulación de estado de la tienda
+  };
+  return store.subscribe(callback);
+}
+
+function getSnapshot() {
+  return Math.random();
+}
+
+function MyComponent() {
+  const data = useSyncExternalStore(subscribe, getSnapshot);
+
+  return <div>Datos de la tienda: {data}</div>;
+}
+```
+
+Estos ejemplos ilustran cómo aplicar cada una de las reglas al usar React para asegurar que los efectos secundarios se manejen correctamente y de manera eficiente.
+
 # JavaScript imprescindible
 
 ## import / export
