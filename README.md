@@ -470,9 +470,7 @@ export function ExperiencePage () {
 
 [Ejercicio](./onchage.md)
 
-# Efectos
-
-## Reglas
+## Cuidadín con los efectos (reglas)
 
 ### REGLA #0
 **Cuando un componente se renderiza, debe hacerlo sin generar efectos secundarios.**
