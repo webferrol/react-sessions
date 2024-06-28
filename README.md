@@ -494,38 +494,10 @@ function MyComponent() {
 }
 ```
 
-Otro ejemplo con useEffect
-
-```jsx
-function Component () {
-  const [counter, setCounter] = useState(0)
-  useEffect(() => {
-    document.title = 'When a component renders, it should do so without running into any side effects'
-  }, [])
-
-  useEffect(() => { // Correct solution
-    document.title = counter.toString()
-  }, [counter])
-
-  const handleClick = () => {
-    setCounter(value => value + 1)
-    // document.title = counter.toString() // Bad solution
-  }
-  return (
-    <>
-      <main>
-        <h1>Regla 0</h1>
-        <button onClick={handleClick}>Contador {counter}</button>
-      </main>
-    </>
-  )
-}
-```
+[Ejemplo completo](./components/rule-0.tsx)
 
 ### REGLA #1
 **Si un efecto secundario es desencadenado por un evento, coloca ese efecto secundario en un manejador de eventos.**
-
-[Ejemplo completo](./components/CustomInput.jsx)
 
 *Ejemplo:*
 Una tarea que se ejecuta como resultado de un evento de usuario, como un clic.
