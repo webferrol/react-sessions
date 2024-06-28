@@ -16,6 +16,7 @@
   - [Hooks](#Hooks)
   - [Memo](#Memo)
   - [Ejemplo de gestión de un formulario](#Ejemplo-de-gestión-de-un-formulario)
+  - [Cuidadín con los efectos. Reglas](#cuidadín-con-los-efectos-reglas)
 - [JavaScript imprescindible](#JavaScript-imprescindible)
   - [import / export](#import--export)
   - [Destructuring](#Destructuring)
